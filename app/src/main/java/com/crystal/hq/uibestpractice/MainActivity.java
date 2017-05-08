@@ -1,7 +1,6 @@
 package com.crystal.hq.uibestpractice;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +15,7 @@ public class MainActivity extends BaseActivity {
     private Button send_button;
     private ListView msg_list_view;
     private MsgAdapter msgAdapter;
-    private List<Msg> msgList =new ArrayList<Msg>();
+    private List<Msg> msgList = new ArrayList<Msg>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +23,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         initMSG();
-        Log.d("MainActivity","MainActivity onCreate");
-
         //将消息存放到适配器中
         msgAdapter = new MsgAdapter(MainActivity.this, R.layout.message_item_layout, msgList);
         msg_list_view = (ListView) findViewById(R.id.msg_list_view);
