@@ -1,11 +1,16 @@
 package com.crystal.hq.uibestpractice;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +21,8 @@ public class MainActivity extends BaseActivity {
     private ListView msg_list_view;
     private MsgAdapter msgAdapter;
     private List<Msg> msgList = new ArrayList<Msg>();
+
+    private Button fragment_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,27 @@ public class MainActivity extends BaseActivity {
                     //将ListView定位到最后一行
                     msg_list_view.setSelection(msgList.size());
                     input_edit_text.setText("");
+                }
+            }
+        });
+
+        fragment_button =(Button)findViewById(R.id.button);
+        fragment_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.button:
+                        AnotherRightFragment anotherRF = new AnotherRightFragment();
+                        FragmentManager fm =getFragmentManager();
+                        FragmentTransaction transaction = fm.beginTransaction();
+                        transaction.replace(R.id.right_fragment,anotherRF,"com.crystal.hq.uibestpractice.AnotherRightFragment");
+//                        transaction.replace(R.id.right_fragment,anotherRF);
+                        //Back键，返回栈RightFragment
+                        transaction.addToBackStack(null);
+                        transaction.commit();
+                        break;
+                    default:
+                        break;
                 }
             }
         });
