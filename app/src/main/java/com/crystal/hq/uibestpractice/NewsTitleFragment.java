@@ -25,6 +25,7 @@ public class NewsTitleFragment extends Fragment {
     private boolean isTwoPane;
     private View view;
 
+    //在newsMainActivity建立与fragment的关联时调用
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -59,10 +60,11 @@ public class NewsTitleFragment extends Fragment {
         return view;
     }
 
+    //当newsMainActivity被创建完成时调用
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (getActivity().findViewById(R.id.news_content_layout) != null) {
+        if (getActivity().findViewById(R.id.news_content_frame_layout) != null) {
             //找到newsContent布局，为双页模式
             isTwoPane = true;
             if (newsList.size() > 0) {
