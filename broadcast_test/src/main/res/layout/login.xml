@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="账 号:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/login_account"
+            android:layout_height="wrap_content"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="密 码:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_height="wrap_content"
+            android:hint="请输入您的密码..."
+            android:inputType="textPassword"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <CheckBox
+            android:id="@+id/save_password"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_span="2"
+            android:checked="false"
+            android:text="记住密码"
+            android:textSize="16sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:text="登录"
+            android:textSize="20sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/clear_info"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:text="清空登录信息"
+            android:textSize="20sp" />
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/create_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="创建新联系人" />
+
+        <Button
+            android:id="@+id/sign_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账号登录" />
+
+        <Button
+            android:id="@+id/import_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="导入联系人" />
+    </LinearLayout>
+</TableLayout>

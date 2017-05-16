@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Created by Crystal on 2017/5/9.
+ * 关闭所有活动
  */
 
 public class ActivityController {
