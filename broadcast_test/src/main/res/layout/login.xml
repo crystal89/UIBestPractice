@@ -64,30 +64,8 @@
             android:textSize="20sp" />
     </TableRow>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp">
-
-        <Button
-            android:id="@+id/create_contact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="创建新联系人" />
-
-        <Button
-            android:id="@+id/sign_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="账号登录" />
-
-        <Button
-            android:id="@+id/import_contacts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="导入联系人" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/to_contentMainActivity"
+        android:layout_marginTop="10dp"
+        android:text="跳转到Content主活动界面" />
 </TableLayout>

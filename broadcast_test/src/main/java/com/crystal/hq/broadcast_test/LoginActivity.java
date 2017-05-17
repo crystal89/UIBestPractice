@@ -35,6 +35,8 @@ public class LoginActivity extends BaseActivity {
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
 
+    private Button to_contentMainActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,9 +66,9 @@ public class LoginActivity extends BaseActivity {
         try {
             prefs = getSharedPreferences("data", MODE_PRIVATE);
             if (prefs != null) {
-                boolean isRemember=prefs.getBoolean("rem_password", false);
+                boolean isRemember = prefs.getBoolean("rem_password", false);
                 Log.e("SharedPreferences", prefs.getAll().toString());
-                if(isRemember) {
+                if (isRemember) {
                     account_et.setText(prefs.getString("u_account", ""));
                     password_et.setText(prefs.getString("u_password", ""));
                     save_password_cb.setChecked(isRemember);
@@ -120,6 +122,16 @@ public class LoginActivity extends BaseActivity {
                 save_password_cb.setChecked(false);
             }
         });*/
+
+        to_contentMainActivity = (Button) findViewById(R.id.to_contentMainActivity);
+        to_contentMainActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ContentMainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     //#region "保存数据到文件中"
