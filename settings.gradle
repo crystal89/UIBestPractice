@@ -1,1 +1,1 @@
-include ':app', ':broadcast_test'
+include ':app', ':broadcast_test', ':multi_media'
