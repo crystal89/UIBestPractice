@@ -56,7 +56,7 @@ public class Login_MainActivity extends BaseActivity {
         });
 
         //新建一个test数据库
-        dbHelper = new DatabaseHelper(Login_MainActivity.this, "test.db", null, 2);
+        dbHelper = new DatabaseHelper(Login_MainActivity.this, "test.db", null, 1);
         create_db = (Button) findViewById(R.id.create_db);
         create_db.setOnClickListener(new View.OnClickListener() {
             @Override

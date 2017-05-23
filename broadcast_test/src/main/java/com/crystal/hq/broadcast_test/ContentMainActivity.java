@@ -47,10 +47,12 @@ public class ContentMainActivity extends BaseActivity {
 
     //将系统联系人信息添加到contactsLis中
     private void initContacts() {
-        //查询联系人
-        //String[] PHONES_PROJECTION = new String[]{ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.NUMBER};
-        Cursor cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        Cursor cursor = null;
+
         try {
+            //查询联系人
+            //String[] PHONES_PROJECTION = new String[]{ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.NUMBER};
+            cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
             if (cursor != null) {
                 while (cursor.moveToNext()) {
                     //获取联系人name
@@ -65,7 +67,7 @@ public class ContentMainActivity extends BaseActivity {
         } finally {
             if (cursor != null)
                 cursor.close();
-            Log.i("AAAA", Integer.toString(contactsList.size()));
+            Log.i("ContentMainActivity", Integer.toString(contactsList.size()));
         }
     }
 }

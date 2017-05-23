@@ -56,5 +56,8 @@
                     </intent-filter>
                 </receiver>-->
         <activity android:name=".ContentMainActivity" />
+        <provider
+            android:authorities="com.crystal.hq.broadcast_test.DatabaseProvider"
+            android:name="com.crystal.hq.broadcast_test.DatabaseProvider"/>
     </application>
 </manifest>

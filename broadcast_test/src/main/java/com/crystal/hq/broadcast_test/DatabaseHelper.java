@@ -27,7 +27,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             db.execSQL(_Book);
             db.execSQL(_CATEGORY);
-            Toast.makeText(_context, "Create database succeeded.", Toast.LENGTH_SHORT).show();
+            //跨程序访问不能直接使用Toast
+            //Toast.makeText(_context, "Create database succeeded.", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Log.e("exception: ", e.toString());
         }
